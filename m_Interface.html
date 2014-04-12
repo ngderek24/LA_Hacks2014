@@ -4,10 +4,17 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
 </script>
-<audio id="audio1" src="http://a.tumblr.com/tumblr_m1ql00O9xW1r75aixo1.mp3" controls preload="auto" autobuffer>
+<audio id="audio1" src="http://a.tumblr.com/tumblr_m1ql00O9xW1r75aixo1.mp3" loop 
+
+preload="auto"autobuffer>
+
+</audio>
+<audio id="audio2" src="http://netanimations.net/Nail-hammering-sound-effect.mp3" loop 
+
+preload="auto"autobuffer>
+
 </audio>
 <script>
-var fadeTracker=0;
 
 $(document).ready(function(){
   $("#Joy").click(function(){
@@ -23,9 +30,30 @@ $(document).ready(function(){
 });
 
 function EvalSound(soundobj) {
+if(soundobj != 'audio1')
+{
+$("#audio1").volume = 1;
+$("#audio1").animate({volume: 0}, 1000);
+
+}
+(audio1).pause();
+(audio1).currentTime =0;
+if(soundobj != 'audio2')
+{
+$("#audio2").volume = 1;
+$("#audio2").animate({volume: 0}, 1000);
+}
+(audio2).pause();
+(audio2).currentTime =0;
   var thissound=document.getElementById(soundobj);
+thissound.volume = 0.0;
+$(thissound).animate({volume: 1}, 1000);
   thissound.play();
 }
+
+
+
+
 </script>
 
 <h1> <test>NAME </test></h1>
@@ -34,11 +62,12 @@ function EvalSound(soundobj) {
 <body>
 <p>How Are You Feeling Today?</p>
 <form>
-<input type="button" id='MusicTest' value="Play Sound" onClick="EvalSound('audio1')">
-</form>
-<form>
-<button type = "button" id= 'Joy' onclick = "pushed('Joyful')"> Joyful </button>
-<button type = "button" id= 'Dep' onclick = "pushed()"> Depressed </button>
+<button type = "button" id= 'Joy' onclick = "document.bgColor='#0400F0', EvalSound('audio1')"> Joyful 
+
+</button>
+<button type = "button" id= 'Dep' onclick = "document.bgColor='#A40900', EvalSound('audio2')"> 
+
+Depressed </button>
 <br>
 </form>
 <br><br>
@@ -46,7 +75,9 @@ function EvalSound(soundobj) {
 <div id="div2" style="display:none;"> DO YOU EVEN LIFT?</div><br>
 <br>
 <form>
-<textarea onfocus="clearContents(this)" style="border:none; " name="comments" id='diary' cols="70" rows="20">
+<textarea onfocus="clearContents(this)" style="border:none; " name="comments" id='diary' cols="70" 
+
+rows="20">
 What do you want to write?
 </textarea>
 <br>
