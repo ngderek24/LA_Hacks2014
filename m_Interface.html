@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<body>
 <center>
-<h1> <test>Test </test></h1>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeIn(3000);
+	$("#div2").fadeIn(3000);
+  });
+});
+</script>
+
+<h1> <test>NAME </test></h1>
+</head>
+
+<body>
+<p>How Are You Feeling Today?</p>
 <form>
-<button type = "button" onclick = "pushed()"> Joyful </button>
-<br>
-<button type = "button" onclick = "pushed()"> Deppressed </button>
+<button type = "button" onclick = "document.body.style.backgroundColor='yellow'"> Joyful </button>
+<button type = "button" onclick = "document.body.style.backgroundColor='black'"> Depressed </button>
 <br>
 </form>
+<br><br>
+<div id="div1" style="display:none;"> #420YOLOSWAG</div><br>
+<div id="div2" style="display:none;"> DO YOU EVEN LIFT?</div><br>
 <br>
 <form>
 <textarea name="comments" cols="70" rows="20">
@@ -18,13 +35,15 @@ Type what's on your mind here...
 <input type="reset" value="Reset">
 <br>
 </form>
-<script>
+<script type = "text/javascript">
 
-function pushed()
+function pushed1(x)
 {
-hi
+if(x == "yellow")
+document.body.style.backgroundColor="yellow"
+else
+document.body.style.backgroundColor="black"
 }
-</script>
-</center>
 </body>
+</center>
 </html>
