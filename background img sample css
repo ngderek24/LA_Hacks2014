@@ -1,0 +1,3 @@
+body{ background-image:url("http://www.bostonbakesforbreastcancer.org/wp-content/uploads/2012/03/sun.jpg");} 
+p { color: blue; }
+h3{ color: white; }
