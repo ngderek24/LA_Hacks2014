@@ -1,119 +1,133 @@
 <!DOCTYPE html>
-<html>
-<center>
-<head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-</script>
+<html style="background-color:'#000000'; border-collapse:collapse; border-spacing:0;">
 <audio id="audio1" src="http://a.tumblr.com/tumblr_m1ql00O9xW1r75aixo1.mp3" loop 
-
-preload="auto"autobuffer>
-
-</audio>
+preload="auto"autobuffer></audio>
+	
 <audio id="audio2" src="http://netanimations.net/Nail-hammering-sound-effect.mp3" loop 
+preload="auto"autobuffer></audio>
 
-preload="auto"autobuffer>
-
-</audio>
-<script>
-
-$(document).ready(function(){
-  $("#Joy").click(function(){
-	buttonId='button'.id;
-	$("#div1").fadeOut(1000);
-	$("#div2").fadeIn(3000);
-  });
-  $("#Dep").click(function(){
-	buttonId='button'.id;
-	$("#div1").fadeIn(3000);
-	$("#div2").fadeOut(1000);
-  });
-});
-
-function EvalSound(soundobj) {
-if(soundobj != 'audio1')
-{
-$("#audio1").volume = 1;
-$("#audio1").animate({volume: 0}, 1000);
-
-}
-(audio1).pause();
-(audio1).currentTime =0;
-if(soundobj != 'audio2')
-{
-$("#audio2").volume = 1;
-$("#audio2").animate({volume: 0}, 1000);
-}
-(audio2).pause();
-(audio2).currentTime =0;
-  var thissound=document.getElementById(soundobj);
-thissound.volume = 0.0;
-$(thissound).animate({volume: 1}, 1000);
-  thissound.play();
-}
-
-
-
-
-</script>
-
-<h1> <test>NAME </test></h1>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+	</script>
+<head>
+	<link rel="stylesheet" type="text/css" href="crossfade.css">
 </head>
+<body style="width:screen.width; border-collapse:collapse; border-spacing:0; margin-bottom:0; margin-left:0; margin-right:0; margin-top:0;" background-color=transparent >
+	<div style="position:absolute"></div>
+	<div id='cycler' style="position:relative; height:1080px; width:1920px; z-index:1;">                                                                                          
+		<img class='active' src="http://i.imgur.com/ZBBukdp.jpg" />
+		<img id='img2' src="http://i.imgur.com/O6WHB.jpg" />
+		<img id='img3' src="http://i.imgur.com/dlYCTDy.jpg"/>
+		<img id='img4' src="http://i.imgur.com/hW8tBdX.png" />
+		<img id='img5' src="http://i.imgur.com/5pNvtMZ.jpg" />
+	</div>
 
-<body>
-<p>How Are You Feeling Today?</p>
-<form>
-<button type = "button" id= 'Joy' onclick = "document.bgColor='#0400F0', EvalSound('audio1')"> Joyful 
+	<script>
+		$(document).ready(function(){
+		  $("#Joy").click(function(){
+			buttonId='button'.id;
+			$("#div1").fadeOut(1000);
+			$("#div2").fadeIn(3000);
+		  });
+		  $("#Dep").click(function(){
+			buttonId='button'.id;
+			$("#div1").fadeIn(3000);
+			$("#div2").fadeOut(1000);
+		  });
+		});
+		function EvalSound(soundobj) {
+			if(soundobj != 'audio1')
+			{
+			$("#audio1").volume = 1;
+			$("#audio1").animate({volume: 0}, 1000);
 
-</button>
-<button type = "button" id= 'Dep' onclick = "document.bgColor='#A40900', EvalSound('audio2')"> 
-
-Depressed </button>
-<br>
-</form>
-<br><br>
-<div id="div1" style="display:none;"> #420YOLOSWAG</div><br>
-<div id="div2" style="display:none;"> DO YOU EVEN LIFT?</div><br>
-<br>
-<form>
-<textarea onfocus="clearContents(this)" style="border:none; " name="comments" id='diary' cols="70" 
-
-rows="20">
-What do you want to write?
-</textarea>
-<br>
-<button type="button" onclick="resetText()">Let go </button>
-<br>
-</form>
-<script>
-var bodyTextClickCtr=0;
-function pushed(a)
-{
-	if(a=='Joyful')
-		{document.bgColor='#f1c40f';
-		document.getElementById('diary').style.backgroundColor='#234879';
+			}
+			(audio1).pause();
+			(audio1).currentTime =0;
+			if(soundobj != 'audio2')
+			{
+			$("#audio2").volume = 1;
+			$("#audio2").animate({volume: 0}, 1000);
+			}
+			(audio2).pause();
+			(audio2).currentTime =0;
+			  var thissound=document.getElementById(soundobj);
+			thissound.volume = 0.0;
+			$(thissound).animate({volume: 1}, 1000);
+			  thissound.play();
 		}
-	else
-		document.bgColor='#000000';
-}
+		function cycleImages(){
+			  var $active = $('#cycler .active');
+			  var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+			  $next.css('z-index',2);//move the next image up the pile
+			  $active.fadeOut(1500,function(){//fade out the top image
+			  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+				  $next.css('z-index',3).addClass('active');//make the next image the top one
+			  });
+			}
 
-function clearContents(txtArea)
-{
-	if(bodyTextClickCtr==0)
-	{
-		txtArea.value='';
-		bodyTextClickCtr+=1;
-	}
-	else
-		return;
-}
-function resetText()
-{
-	document.getElementById('diary').value='...';
-	bodyTextClickCtr=0;
-}
-</script>
+		$(document).ready(function(){
+		// run every 7s
+		setInterval('cycleImages()', 7000);
+		})
+	</script>
+
+	<center>
 
 
+	<div style="position:absolute; width:1920px; top:0px; z-index:2;" background-color=transparent>
+		<p>NAME</p>
+		<div 
+			<p>How Are You Feeling Today?</p>
+			<form>
+				<button type = "button" id= 'Joy' onclick = "pushed('Joyful')"> Joyful </button>
+				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')"> Depressed </button>
+				<br>
+			</form>
+			<br><br>
+			<br><br>
+			<br><br>
+			<form>
+				<textarea onfocus="clearContents(this)" style="border:none; background-color:transparent; "  name="comments" id='diary' cols="70" rows="20">What do you want to write?
+				</textarea>
+				<br>
+				<button type="button" onclick="resetText()">Let go </button>
+				<br>
+			</form>
+		<script>
+			var bodyTextClickCtr=0;
+			function pushed(a)
+			{
+				if(a=='Joyful')
+					{
+					EvalSound('audio1');
+					}
+				if(a=='Depressed')
+				{
+					EvalSound('audio2');
+				}
+				else
+					return;
+			}
+
+			function clearContents(txtArea)
+			{
+				if(bodyTextClickCtr==0)
+				{
+					txtArea.value='';
+					bodyTextClickCtr+=1;
+				}
+				else
+					return;
+			}
+			function resetText()
+			{
+				document.getElementById('diary').value='...';
+				bodyTextClickCtr=0;
+			}
+		</script>
+		</div>
+
+	</div>
+	</center>
 </body>
-</center>
 </html>
