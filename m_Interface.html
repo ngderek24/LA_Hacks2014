@@ -4,13 +4,28 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
 </script>
+<audio id="audio1" src="http://a.tumblr.com/tumblr_m1ql00O9xW1r75aixo1.mp3" controls preload="auto" autobuffer>
+</audio>
 <script>
+var fadeTracker=0;
+
 $(document).ready(function(){
-  $("button").click(function(){
-    $("#div1").fadeIn(3000);
+  $("#Joy").click(function(){
+	buttonId='button'.id;
+	$("#div1").fadeOut(1000);
 	$("#div2").fadeIn(3000);
   });
+  $("#Dep").click(function(){
+	buttonId='button'.id;
+	$("#div1").fadeIn(3000);
+	$("#div2").fadeOut(1000);
+  });
 });
+
+function EvalSound(soundobj) {
+  var thissound=document.getElementById(soundobj);
+  thissound.play();
+}
 </script>
 
 <h1> <test>NAME </test></h1>
@@ -19,8 +34,11 @@ $(document).ready(function(){
 <body>
 <p>How Are You Feeling Today?</p>
 <form>
-<button type = "button" onclick = "document.body.style.backgroundColor='yellow'"> Joyful </button>
-<button type = "button" onclick = "document.body.style.backgroundColor='black'"> Depressed </button>
+<input type="button" id='MusicTest' value="Play Sound" onClick="EvalSound('audio1')">
+</form>
+<form>
+<button type = "button" id= 'Joy' onclick = "pushed('Joyful')"> Joyful </button>
+<button type = "button" id= 'Dep' onclick = "pushed()"> Depressed </button>
 <br>
 </form>
 <br><br>
@@ -28,14 +46,42 @@ $(document).ready(function(){
 <div id="div2" style="display:none;"> DO YOU EVEN LIFT?</div><br>
 <br>
 <form>
-<textarea name="comments" cols="70" rows="20">
-Type what's on your mind here...
+<textarea onfocus="clearContents(this)" style="border:none; " name="comments" id='diary' cols="70" rows="20">
+What do you want to write?
 </textarea>
 <br>
-<input type="reset" value="Reset">
+<button type="button" onclick="resetText()">Let go </button>
 <br>
 </form>
-<script type = "text/javascript">
+<script>
+var bodyTextClickCtr=0;
+function pushed(a)
+{
+	if(a=='Joyful')
+		{document.bgColor='#f1c40f';
+		document.getElementById('diary').style.backgroundColor='#234879';
+		}
+	else
+		document.bgColor='#000000';
+}
+
+function clearContents(txtArea)
+{
+	if(bodyTextClickCtr==0)
+	{
+		txtArea.value='';
+		bodyTextClickCtr+=1;
+	}
+	else
+		return;
+}
+function resetText()
+{
+	document.getElementById('diary').value='...';
+	bodyTextClickCtr=0;
+}
+</script>
+
 
 </body>
 </center>
