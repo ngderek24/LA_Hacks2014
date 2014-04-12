@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<audio controls autoplay>
+  <source src="sounds/Hackbeat.mp3" 
+	autostart="true" type="audio/mpeg">
+  <source src="horse.ogg" type="audio/ogg">
+  <embed height="50" width="100" src="horse.mp3">
+</audio>
+
+</body>
+</html>
