@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html style="background-color:'#000000'; border-collapse:collapse; border-spacing:0;">
-<audio id="audio1" src="http://a.tumblr.com/tumblr_m1ql00O9xW1r75aixo1.mp3" loop 
+<html style="background-color:'#000000'; border-collapse:collapse; border-spacing:0;" width=1920px height=1080px;>
+<audio id="audioAng" src="angry.mp3" loop 
 preload="auto"autobuffer></audio>
 	
-<audio id="audio2" src="http://netanimations.net/Nail-hammering-sound-effect.mp3" loop 
+<audio id="audioNeu" src="neutral.mp3" loop 
+preload="auto"autobuffer></audio>
+
+<audio id="audioCmp" src="contemplative.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioCfs" src="confused.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioDep" src="depressed.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioCon" src="content.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioEla" src="elated.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioEne" src="energetic.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioSer" src="serene.mp3" loop 
 preload="auto"autobuffer></audio>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
@@ -13,43 +28,32 @@ preload="auto"autobuffer></audio>
 </head>
 <body style="width:screen.width; border-collapse:collapse; border-spacing:0; margin-bottom:0; margin-left:0; margin-right:0; margin-top:0;" background-color=transparent >
 	<div style="position:absolute"></div>
-	<div id='cycler' style="position:relative; height:1080px; width:1920px; z-index:1;">                                                                                          
-		<img class='active' src="http://i.imgur.com/ZBBukdp.jpg" />
-		<img id='img2' src="http://i.imgur.com/O6WHB.jpg" />
-		<img id='img3' src="http://i.imgur.com/dlYCTDy.jpg"/>
-		<img id='img4' src="http://i.imgur.com/hW8tBdX.png" />
-		<img id='img5' src="http://i.imgur.com/5pNvtMZ.jpg" />
+	<div id='cycler' style="position:relative; margin: 0 auto; height:1080px; width:1920px; z-index:1;">                                                                                          
+		<img class='active' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" id='img' src="http://i.imgur.com/ZBBukdp.jpg" />
+		<img class='active' id='img2' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/O6WHB.jpg" />
+		<img class='active' id='img3' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/dlYCTDy.jpg"/>
 	</div>
 
 	<script>
-		$(document).ready(function(){
-		  $("#Joy").click(function(){
-			buttonId='button'.id;
-			$("#div1").fadeOut(1000);
-			$("#div2").fadeIn(3000);
-		  });
-		  $("#Dep").click(function(){
-			buttonId='button'.id;
-			$("#div1").fadeIn(3000);
-			$("#div2").fadeOut(1000);
-		  });
-		});
 		function EvalSound(soundobj) {
-			if(soundobj != 'audio1')
-			{
-			$("#audio1").volume = 1;
-			$("#audio1").animate({volume: 0}, 1000);
-
-			}
-			(audio1).pause();
-			(audio1).currentTime =0;
-			if(soundobj != 'audio2')
-			{
-			$("#audio2").volume = 1;
-			$("#audio2").animate({volume: 0}, 1000);
-			}
-			(audio2).pause();
-			(audio2).currentTime =0;
+			(audioSer).pause();
+			(audioSer).currentTime =0;
+			(audioCon).pause();
+			(audioCon).currentTime =0;
+			(audioEla).pause();
+			(audioEla).currentTime =0;
+			(audioCmp).pause();
+			(audioCmp).currentTime =0;
+			(audioNeu).pause();
+			(audioNeu).currentTime =0;
+			(audioEne).pause();
+			(audioEne).currentTime =0;
+			(audioDep).pause();
+			(audioDep).currentTime =0;
+			(audioCfs).pause();
+			(audioCfs).currentTime =0;
+			(audioAng).pause();
+			(audioAng).currentTime =0;
 			  var thissound=document.getElementById(soundobj);
 			thissound.volume = 0.0;
 			$(thissound).animate({volume: 1}, 1000);
@@ -66,8 +70,8 @@ preload="auto"autobuffer></audio>
 			}
 
 		$(document).ready(function(){
-		// run every 7s
-		setInterval('cycleImages()', 7000);
+		// run every 25s
+		setInterval('cycleImages()', 25000);
 		})
 	</script>
 
@@ -79,15 +83,23 @@ preload="auto"autobuffer></audio>
 		<div 
 			<p>How Are You Feeling Today?</p>
 			<form>
-				<button type = "button" id= 'Joy' onclick = "pushed('Joyful')"> Joyful </button>
-				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')"> Depressed </button>
+				<button type = "button" id= 'Ser' onclick = "pushed('Serene')"> Serene </button>
+				<button type = "button" id= 'Con' onclick = "pushed('Content')"> Content </button>
+				<button type = "button" id= 'Ela' onclick = "pushed('Elated')"> Elated </button>
 				<br>
+				<button type = "button" id= 'Cmp' onclick = "pushed('Contemplative')"> Contemplative </button>
+				<button type = "button" id= 'Neu' onclick = "pushed('Neutral')"> Neutral </button>
+				<button type = "button" id= 'Ene' onclick = "pushed('Energetic')"> Energetic </button>
+				<br>
+				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')"> Depressed </button>
+				<button type = "button" id= 'Cfs' onclick = "pushed('Confused')"> Confused </button>
+				<button type = "button" id= 'Ang' onclick = "pushed('Angry')"> Angry </button>
 			</form>
 			<br><br>
 			<br><br>
-			<br><br>
+			
 			<form>
-				<textarea onfocus="clearContents(this)" style="border:none; background-color:transparent; "  name="comments" id='diary' cols="70" rows="20">What do you want to write?
+				<textarea onfocus="clearContents(this)" style="border:1px rgba(255,255,255,0.7); border-radius:10px; background-color:rgba(255,255,255,0.4); "  name="comments" id='diary' cols="70" rows="40">What do you want to write?
 				</textarea>
 				<br>
 				<button type="button" onclick="resetText()">Let go </button>
@@ -97,16 +109,69 @@ preload="auto"autobuffer></audio>
 			var bodyTextClickCtr=0;
 			function pushed(a)
 			{
-				if(a=='Joyful')
+				if(a=='Serene')
 					{
-					EvalSound('audio1');
+					document.getElementById('img').src="http://nooneexistsalone.files.wordpress.com/2011/10/sunrise2.jpg";
+					document.getElementById('img2').src="http://img.4plebs.org/boards/x/image/1391/86/1391864103957.jpg";
+					document.getElementById('img3').src='http://beststockpictures.toinspire.in/plog-content/images/widescreen-wallpapers/nature-pictures-2/nature-pictures-single-tree-bright-clouds-naute-pictures.jpg';
+					EvalSound('audioSer');
 					}
+				if(a=='Content')
+				{
+					document.getElementById('img').src="http://flowerdrawings.net/wp-content/uploads/2014/03/1095860966_a03c9cb69c.jpg";
+					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-326813.jpg";
+					document.getElementById('img3').src='http://wallpapers.wallbase.cc/rozne/wallpaper-68013.jpg';
+					EvalSound('audioCon');
+				}
+				if(a=='Elated')
+				{
+					document.getElementById('img').src="http://www.healthyhappylife.org/images/happy-people.jpg";
+					document.getElementById('img2').src="http://p1.pichost.me/i/30/1535145.jpg";
+					document.getElementById('img3').src='http://3.bp.blogspot.com/-F1IBOG0J9WA/SRSQEL6nPPI/AAAAAAAAAFs/PbIda7t0HFc/s1600/Smiley+Flower+Happy%2521.jpg';
+					EvalSound('audioEla');
+				}
+				if(a=='Contemplative')
+				{
+					document.getElementById('img').src="http://4loveofthetruth.files.wordpress.com/2012/01/contemplation21.jpg";
+					document.getElementById('img2').src="https://z-n.ak.fbcdn.net/external.ak/safe_image.php?d=AQBRb2wW-6Hxi00p&w=376&h=366&url=http%3A%2F%2Fhollyroach.com%2Fwp-content%2Fuploads%2F2013%2F09%2Fmeditating-by-the-lake.jpg";
+					document.getElementById('img3').src='http://upload.wikimedia.org/wikipedia/commons/e/e8/Water_drop_impact_on_a_water-surface.jpg';
+					EvalSound('audioCmp');
+				}
+				if(a=='Neutral')
+				{
+					document.getElementById('img').src="http://upload.wikimedia.org/wikipedia/commons/c/ca/Imperial_sand_dunes.jpg";
+					document.getElementById('img2').src="http://blog.gooddays-app.com/wp-content/uploads/2013/04/balance.jpg";
+					document.getElementById('img3').src='http://lowcadence.com/wp-content/uploads/2013/08/YinYang.jpg';
+					EvalSound('audioNeu');
+				}
+				if(a=='Energetic')
+				{
+					document.getElementById('img').src="http://fc00.deviantart.net/fs70/f/2010/056/1/f/Running_Fire_by_karimbalaa.jpg";
+					document.getElementById('img2').src="http://img3.wikia.nocookie.net/__cb20130506161118/powerlisting/images/f/f6/Blue_energy-blog.jpg";
+					document.getElementById('img3').src='http://lunar.thegamez.net/coalmine2014/images-how-coal-is-mined/net-3d-wallpaper-blue-energy-tornado-html-blue-energy-tornado-1920x1200.jpg';
+					EvalSound('audioEne');
+				}
 				if(a=='Depressed')
 				{
-					EvalSound('audio2');
+					document.getElementById('img').src="http://dionwu.com/img/framesoflife/isolate.jpg";
+					document.getElementById('img2').src="http://i.imgur.com/ZBBukdp.jpg";
+					document.getElementById('img3').src='http://photographyunposed.files.wordpress.com/2012/09/foggy-morning-web.jpg';
+					EvalSound('audioDep');
 				}
-				else
-					return;
+				if(a=='Confused')
+				{
+					document.getElementById('img').src="http://forbids.files.wordpress.com/2011/05/penrosestairs.png";
+					document.getElementById('img2').src="http://undr.com/portfolio/desktops/UndrDesktop_BlurryShipLights.jpg";
+					document.getElementById('img3').src='http://2.bp.blogspot.com/-k8K3WWi8Gvw/Tp3yyW9l1jI/AAAAAAAADBg/YWmnsG7wJn0/s1600/feet%2Bdancing.jpg';
+					EvalSound('audioCfs');
+				}
+				if(a=='Angry')
+				{
+					document.getElementById('img').src="http://wallpapers.wallbase.cc/rozne/wallpaper-767625.jpg";
+					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-2426010.jpg";
+					document.getElementById('img3').src='http://fc07.deviantart.net/fs71/i/2012/100/5/9/burning_woods_by_alexlinde-d4ug2ph.jpg';
+					EvalSound('audioAng');
+				}
 			}
 
 			function clearContents(txtArea)
