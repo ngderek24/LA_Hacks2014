@@ -2,9 +2,10 @@
 <html style="background-color:'#000000'; border-collapse:collapse; border-spacing:0;" width=1920px height=1080px;>
 <audio id="audioAng" src="angry.mp3" loop 
 preload="auto"autobuffer></audio>
-
+	
 <audio id="audioNeu" src="neutral.mp3" loop 
 preload="auto"autobuffer></audio>
+
 <audio id="audioCmp" src="contemplative.mp3" loop 
 preload="auto"autobuffer></audio>
 <audio id="audioCfs" src="confused.mp3" loop 
@@ -28,9 +29,9 @@ preload="auto"autobuffer></audio>
 <body style="width:screen.width; border-collapse:collapse; border-spacing:0; margin-bottom:0; margin-left:0; margin-right:0; margin-top:0;" background-color=transparent >
 	<div style="position:absolute"></div>
 	<div id='cycler' style="position:relative; margin: 0 auto; height:1080px; width:1920px; z-index:1;">                                                                                          
-		<img class='active' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" id='img' src="http://i.imgur.com/ZBBukdp.jpg" />
-		<img class='active' id='img2' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/O6WHB.jpg" />
-		<img class='active' id='img3' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/dlYCTDy.jpg"/>
+		<img class='active' id='img' src="http://i.imgur.com/ZBBukdp.jpg" />
+		<img id='img2' src="http://i.imgur.com/O6WHB.jpg" />
+		<img id='img3' src="http://i.imgur.com/dlYCTDy.jpg"/>
 	</div>
 
 	<script>
@@ -62,7 +63,7 @@ preload="auto"autobuffer></audio>
 			  var $active = $('#cycler .active');
 			  var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
 			  $next.css('z-index',2);//move the next image up the pile
-			  $active.fadeOut(1500,function(){//fade out the top image
+			  $active.fadeOut(500,function(){//fade out the top image
 			  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
 				  $next.css('z-index',3).addClass('active');//make the next image the top one
 			  });
@@ -77,146 +78,152 @@ preload="auto"autobuffer></audio>
 	<center>
 
 
-	<div style="position:absolute; width:1920px; top:0px; z-index:2;" background-color=transparent>
-		<p>NAME</p>
-		<div 
-			<p>How Are You Feeling Today?</p>
+	<div style="position:relative; width:1920px; top:-1080px; z-index:2;" background-color=transparent>
+		<p style="font-size:250%; color:white; text-shadow: 1px 1px 1px #000, 3px 3px 5px black;"><strong>ARIA</strong></p>
+		<div  style="position:relative; top:-20px;">
+			<p style="font-size:150%; color:white; text-shadow: 1px 1px 1px #000, 3px 3px 5px black;" >Take a minuet and scale back.</p>
 			<form>
 				<button type = "button" id= 'Ser' onclick = "pushed('Serene')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.53, #CAEBEB),
-	color-stop(1, #78C9DB)
-);
-background-image: -o-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
-background-image: -moz-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
-background-image: -webkit-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
-background-image: -ms-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
-background-image: linear-gradient(to bottom, #CAEBEB 53%, #78C9DB 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Serene </button>
-				
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.53, #CAEBEB),
+										color-stop(1, #78C9DB)
+									);
+				background-image: -o-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+				background-image: -moz-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+				background-image: -webkit-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+				background-image: -ms-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+				background-image: linear-gradient(to bottom, #CAEBEB 53%, #78C9DB 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Serene </button>
+
 				<button type = "button" id= 'Con' onclick = "pushed('Content')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.53, #8DE0A1),
-	color-stop(1, #55F70A)
-);
-background-image: -o-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
-background-image: -moz-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
-background-image: -webkit-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
-background-image: -ms-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
-background-image: linear-gradient(to bottom, #8DE0A1 53%, #55F70A 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Content </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.53, #8DE0A1),
+										color-stop(1, #55F70A)
+									);
+				background-image: -o-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+				background-image: -moz-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+				background-image: -webkit-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+				background-image: -ms-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+				background-image: linear-gradient(to bottom, #8DE0A1 53%, #55F70A 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Content </button>
+				
 				<button type = "button" id= 'Ela' onclick = "pushed('Elated')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.18, #FCFFD6),
-	color-stop(1, #F5E505)
-);
-background-image: -o-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
-background-image: -moz-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
-background-image: -webkit-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
-background-image: -ms-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
-background-image: linear-gradient(to bottom, #FCFFD6 18%, #F5E505 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Elated </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.18, #FCFFD6),
+										color-stop(1, #F5E505)
+									);
+				background-image: -o-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+				background-image: -moz-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+				background-image: -webkit-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+				background-image: -ms-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+				background-image: linear-gradient(to bottom, #FCFFD6 18%, #F5E505 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Elated </button>
 				<br>
+				
 				<button type = "button" id= 'Cmp' onclick = "pushed('Contemplative')"
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.5, #A8BBE3),
-	color-stop(1, #527A91)
-);
-background-image: -o-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
-background-image: -moz-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
-background-image: -webkit-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
-background-image: -ms-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
-background-image: linear-gradient(to bottom, #A8BBE3 50%, #527A91 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Contemplative </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.5, #A8BBE3),
+										color-stop(1, #527A91)
+									);
+				background-image: -o-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+				background-image: -moz-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+				background-image: -webkit-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+				background-image: -ms-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+				background-image: linear-gradient(to bottom, #A8BBE3 50%, #527A91 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Contemplative </button>
+				
 				<button type = "button" id= 'Neu' onclick = "pushed('Neutral')"
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.16, #C1E69C),
-	color-stop(1, #F26DDC)
-);
-background-image: -o-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
-background-image: -moz-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
-background-image: -webkit-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
-background-image: -ms-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
-background-image: linear-gradient(to bottom, #C1E69C 16%, #F26DDC 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Neutral </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.16, #C1E69C),
+										color-stop(1, #F26DDC)
+									);
+				background-image: -o-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+				background-image: -moz-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+				background-image: -webkit-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+				background-image: -ms-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+				background-image: linear-gradient(to bottom, #C1E69C 16%, #F26DDC 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Neutral </button>
+				
 				<button type = "button" id= 'Ene' onclick = "pushed('Energetic')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.32, #FFF200),
-	color-stop(0.66, #FA8805)
-);
-background-image: -o-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
-background-image: -moz-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
-background-image: -webkit-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
-background-image: -ms-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
-background-image: linear-gradient(to bottom, #FFF200 32%, #FA8805 66%); height: 70px; width: 100px;
-				border-radius:10px;"> Energetic </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.32, #FFF200),
+										color-stop(0.66, #FA8805)
+									);
+				background-image: -o-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+				background-image: -moz-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+				background-image: -webkit-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+				background-image: -ms-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+				background-image: linear-gradient(to bottom, #FFF200 32%, #FA8805 66%); height: 70px; width: 100px;
+								border-radius:10px;"> Energetic </button>
 				<br>
+				
 				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.5, #596F80),
-	color-stop(1, #100D12)
-);
-background-image: -o-linear-gradient(bottom, #596F80 50%, #100D12 100%);
-background-image: -moz-linear-gradient(bottom, #596F80 50%, #100D12 100%);
-background-image: -webkit-linear-gradient(bottom, #596F80 50%, #100D12 100%);
-background-image: -ms-linear-gradient(bottom, #596F80 50%, #100D12 100%);
-background-image: linear-gradient(to bottom, #596F80 50%, #100D12 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Depressed </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.5, #596F80),
+										color-stop(1, #100D12)
+									);
+				background-image: -o-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+				background-image: -moz-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+				background-image: -webkit-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+				background-image: -ms-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+				background-image: linear-gradient(to bottom, #596F80 50%, #100D12 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Depressed </button>
+				
 				<button type = "button" id= 'Cfs' onclick = "pushed('Confused')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.33, #E88BE5),
-	color-stop(1, #570566)
-);
-background-image: -o-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
-background-image: -moz-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
-background-image: -webkit-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
-background-image: -ms-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
-background-image: linear-gradient(to bottom, #E88BE5 33%, #570566 100%); height: 70px; width: 100px;
-				border-radius:10px;"> Confused </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.33, #E88BE5),
+										color-stop(1, #570566)
+									);
+				background-image: -o-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+				background-image: -moz-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+				background-image: -webkit-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+				background-image: -ms-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+				background-image: linear-gradient(to bottom, #E88BE5 33%, #570566 100%); height: 70px; width: 100px;
+								border-radius:10px;"> Confused </button>
+				
 				<button type = "button" id= 'Ang' onclick = "pushed('Angry')" 
 				style="background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0.41, #FF9D00),
-	color-stop(0.66, #FA0505)
-);
-background-image: -o-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
-background-image: -moz-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
-background-image: -webkit-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
-background-image: -ms-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
-background-image: linear-gradient(to bottom, #FF9D00 41%, #FA0505 66%); height: 70px; width: 100px;
-				border-radius:10px;"> Angry </button>
+										linear,
+										left top,
+										left bottom,
+										color-stop(0.41, #FF9D00),
+										color-stop(0.66, #FA0505)
+									);
+				background-image: -o-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+				background-image: -moz-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+				background-image: -webkit-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+				background-image: -ms-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+				background-image: linear-gradient(to bottom, #FF9D00 41%, #FA0505 66%); height: 70px; width: 100px;
+								border-radius:10px;"> Angry </button>
 			</form>
 			<br><br>
-			<br><br>
-
+			
 			<form>
-				<textarea onfocus="clearContents(this)" style="border:1px rgba(255,255,255,0.7); border-radius:10px; background-color:rgba(255,255,255,0.4); "  name="comments" id='diary' cols="70" rows="40">What do you want to write?
+				<textarea onfocus="clearContents(this)" style="border:1px rgba(255,255,255,0.7); border-radius:10px; background-color:rgba(255,255,255,0.4); "  name="comments" id='diary' cols="70" rows="25">What do you want to write?
 				</textarea>
 				<br>
 				<button type="button" onclick="resetText()">Let go </button>
@@ -228,65 +235,65 @@ background-image: linear-gradient(to bottom, #FF9D00 41%, #FA0505 66%); height: 
 			{
 				if(a=='Serene')
 					{
-					document.getElementById('img').src="http://nooneexistsalone.files.wordpress.com/2011/10/sunrise2.jpg";
-					document.getElementById('img2').src="http://img.4plebs.org/boards/x/image/1391/86/1391864103957.jpg";
-					document.getElementById('img3').src='http://beststockpictures.toinspire.in/plog-content/images/widescreen-wallpapers/nature-pictures-2/nature-pictures-single-tree-bright-clouds-naute-pictures.jpg';
+					document.getElementById('img').src="http://www.hdwallpapers.in/download/reflections-1920x1080.jpg";
+					document.getElementById('img2').src="http://www.hdwallpapers.in/download/river_dock-1920x1080.jpg";
+					document.getElementById('img3').src='http://www.hdwallpapers.in/download/sunset_at_laguna_beach-1920x1080.jpg';
 					EvalSound('audioSer');
 					}
 				if(a=='Content')
 				{
-					document.getElementById('img').src="http://flowerdrawings.net/wp-content/uploads/2014/03/1095860966_a03c9cb69c.jpg";
-					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-326813.jpg";
-					document.getElementById('img3').src='http://wallpapers.wallbase.cc/rozne/wallpaper-68013.jpg';
+					document.getElementById('img').src="http://wallsistah.com/wp-content/uploads/2014/02/Beach-Chairs-Fresh-New-Hd-Wallpaper-.jpg";
+					document.getElementById('img2').src="http://p1.pichost.me/i/17/1400329.jpg";
+					document.getElementById('img3').src='http://www.cnjtc.com/wp-content/uploads/2013/07/Fireplace-From-Living-Room-Wallpaper.jpg';
 					EvalSound('audioCon');
 				}
 				if(a=='Elated')
 				{
-					document.getElementById('img').src="http://www.healthyhappylife.org/images/happy-people.jpg";
-					document.getElementById('img2').src="http://p1.pichost.me/i/30/1535145.jpg";
-					document.getElementById('img3').src='http://3.bp.blogspot.com/-F1IBOG0J9WA/SRSQEL6nPPI/AAAAAAAAAFs/PbIda7t0HFc/s1600/Smiley+Flower+Happy%2521.jpg';
+					document.getElementById('img').src="http://www.hdwallpapersin.com/files/submissions/Child_Happy_Nature_Autumn_Leaves_HD_Wallpaper_1148910227.jpg";
+					document.getElementById('img2').src="http://crazy-frankenstein.com/free-wallpapers-files/mobile/mobile-wallpapers/smiley-flower-happy-mobile-wallpapers-1920x1200.jpg";
+					document.getElementById('img3').src='http://hdwallpappers.com/images/wallpapers/happy_wallpaper.jpg';
 					EvalSound('audioEla');
 				}
 				if(a=='Contemplative')
 				{
-					document.getElementById('img').src="http://4loveofthetruth.files.wordpress.com/2012/01/contemplation21.jpg";
-					document.getElementById('img2').src="https://z-n.ak.fbcdn.net/external.ak/safe_image.php?d=AQBRb2wW-6Hxi00p&w=376&h=366&url=http%3A%2F%2Fhollyroach.com%2Fwp-content%2Fuploads%2F2013%2F09%2Fmeditating-by-the-lake.jpg";
-					document.getElementById('img3').src='http://upload.wikimedia.org/wikipedia/commons/e/e8/Water_drop_impact_on_a_water-surface.jpg';
+					document.getElementById('img').src="http://www.hdwallpapers.in/download/lighthouse_sunset-1920x1080.jpg";
+					document.getElementById('img2').src="http://hqwide.com/wallpapers/l/1920x1080/33/monk_meditation_shaolin_1920x1080_32935.jpg";
+					document.getElementById('img3').src='http://wallpaperswide.com/download/sepia_water_drop-wallpaper-1920x1080.jpg';
 					EvalSound('audioCmp');
 				}
 				if(a=='Neutral')
 				{
-					document.getElementById('img').src="http://upload.wikimedia.org/wikipedia/commons/c/ca/Imperial_sand_dunes.jpg";
-					document.getElementById('img2').src="http://blog.gooddays-app.com/wp-content/uploads/2013/04/balance.jpg";
-					document.getElementById('img3').src='http://lowcadence.com/wp-content/uploads/2013/08/YinYang.jpg';
+					document.getElementById('img').src="http://p1.pichost.me/i/27/1503186.jpg";
+					document.getElementById('img2').src="http://hdwallphotos.com/wp-content/uploads/2014/03/Earth-Fantasy-Desktop-Wallpaper-HD.jpg";
+					document.getElementById('img3').src='http://hqscreen.com/wallpapers/l/1920x1080/49/yin_yang_symbol_1920x1080_48064.jpg';
 					EvalSound('audioNeu');
 				}
 				if(a=='Energetic')
 				{
-					document.getElementById('img').src="http://fc00.deviantart.net/fs70/f/2010/056/1/f/Running_Fire_by_karimbalaa.jpg";
-					document.getElementById('img2').src="http://img3.wikia.nocookie.net/__cb20130506161118/powerlisting/images/f/f6/Blue_energy-blog.jpg";
-					document.getElementById('img3').src='http://lunar.thegamez.net/coalmine2014/images-how-coal-is-mined/net-3d-wallpaper-blue-energy-tornado-html-blue-energy-tornado-1920x1200.jpg';
+					document.getElementById('img').src="http://www.hdwallpapers.in/download/beautiful_green_landscape-1920x1080.jpg";
+					document.getElementById('img2').src="http://www.hdwallpapers.in/download/uphill_road-1920x1080.jpg";
+					document.getElementById('img3').src='http://www.hdwallpapers.in/download/sunny_bright_day-1920x1080.jpg';
 					EvalSound('audioEne');
 				}
 				if(a=='Depressed')
 				{
-					document.getElementById('img').src="http://dionwu.com/img/framesoflife/isolate.jpg";
-					document.getElementById('img2').src="http://i.imgur.com/ZBBukdp.jpg";
-					document.getElementById('img3').src='http://photographyunposed.files.wordpress.com/2012/09/foggy-morning-web.jpg';
+					document.getElementById('img').src="http://www.hd-wallpaper.us/walls/white_leaves_on_the_branches-wide.jpg";
+					document.getElementById('img2').src="http://media.indiedb.com/images/games/1/20/19099/Droplets_1080.jpg";
+					document.getElementById('img3').src='http://doublethinkhub.files.wordpress.com/2014/04/chess-floor-funny-joke-mirrors-amazing-wallpaper.jpg';
 					EvalSound('audioDep');
 				}
 				if(a=='Confused')
 				{
-					document.getElementById('img').src="http://forbids.files.wordpress.com/2011/05/penrosestairs.png";
-					document.getElementById('img2').src="http://undr.com/portfolio/desktops/UndrDesktop_BlurryShipLights.jpg";
-					document.getElementById('img3').src='http://2.bp.blogspot.com/-k8K3WWi8Gvw/Tp3yyW9l1jI/AAAAAAAADBg/YWmnsG7wJn0/s1600/feet%2Bdancing.jpg';
+					document.getElementById('img').src="http://bluemattebox.com/wp-content/uploads/2013/12/blurry-lights-beyond-the-dock-photography-hd-wallpaper-1920x1200-2536.jpg";
+					document.getElementById('img2').src="http://wallpoper.com/images/00/44/19/27/mysterious-forest_00441927.jpg";
+					document.getElementById('img3').src='http://www.imgbase.info/images/safe-wallpapers/miscellaneous/1_other_wallpapers/6483_1_other_wallpapers_hd_wallpapers_box_man.jpg';
 					EvalSound('audioCfs');
 				}
 				if(a=='Angry')
 				{
-					document.getElementById('img').src="http://wallpapers.wallbase.cc/rozne/wallpaper-767625.jpg";
-					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-2426010.jpg";
-					document.getElementById('img3').src='http://fc07.deviantart.net/fs71/i/2012/100/5/9/burning_woods_by_alexlinde-d4ug2ph.jpg';
+					document.getElementById('img').src="http://hifipanda.com/cdn/51ba09ce2c88a44969.jpg";
+					document.getElementById('img2').src="http://www.imgbase.info/images/safe-wallpapers/miscellaneous/1_other_wallpapers/34150_1_other_wallpapers_broken_glass.jpg";
+					document.getElementById('img3').src='http://lbc9.com/digital-art/abstract/fire-and-flames/abstract-fire-lines-1920x1080.jpg';
 					EvalSound('audioAng');
 				}
 			}
@@ -303,7 +310,7 @@ background-image: linear-gradient(to bottom, #FF9D00 41%, #FA0505 66%); height: 
 			}
 			function resetText()
 			{
-				document.getElementById('diary').value='...';
+				document.getElementById('diary').value='Entry deleted...';
 				bodyTextClickCtr=0;
 			}
 		</script>
