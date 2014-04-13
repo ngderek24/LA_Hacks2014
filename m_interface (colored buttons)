@@ -83,25 +83,34 @@ preload="auto"autobuffer></audio>
 			<p>How Are You Feeling Today?</p>
 			<form>
 				<button type = "button" id= 'Ser' onclick = "pushed('Serene')" 
-				style="background-color:#99FFCC; height: 70px; width: 100px"> Serene </button>
+				style="background-color:#99FFCC; height: 70px; width: 100px;
+				border-radius:10px;"> Serene </button>
 				<button type = "button" id= 'Con' onclick = "pushed('Content')" 
-				style="background-color:#DFFF00; height: 70px; width: 100px"> Content </button>
+				style="background-color:#DFFF00; height: 70px; width: 100px;
+				border-radius:10px;"> Content </button>
 				<button type = "button" id= 'Ela' onclick = "pushed('Elated')" 
-				style="background-color:#FFFF00; height: 70px; width: 100px"> Elated </button>
+				style="background-color:#FFFF00; height: 70px; width: 100px;
+				border-radius:10px;"> Elated </button>
 				<br>
 				<button type = "button" id= 'Cmp' onclick = "pushed('Contemplative')"
-				style="background-color:#6666FF; height: 70px; width: 100px"> Contemplative </button>
+				style="background-color:#6666FF; height: 70px; width: 100px;
+				border-radius:10px;"> Contemplative </button>
 				<button type = "button" id= 'Neu' onclick = "pushed('Neutral')"
-				style="background-color:#FF99FF; height: 70px; width: 100px"> Neutral </button>
+				style="background-color:#FF99FF; height: 70px; width: 100px;
+				border-radius:10px;"> Neutral </button>
 				<button type = "button" id= 'Ene' onclick = "pushed('Energetic')" 
-				style="background-color:#FF6600; height: 70px; width: 100px"> Energetic </button>
+				style="background-color:#FF6600; height: 70px; width: 100px;
+				border-radius:10px;"> Energetic </button>
 				<br>
 				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')" 
-				style="background-color:#999988; height: 70px; width: 100px"> Depressed </button>
+				style="background-color:#999988; height: 70px; width: 100px;
+				border-radius:10px;"> Depressed </button>
 				<button type = "button" id= 'Cfs' onclick = "pushed('Confused')" 
-				style="background-color:#CC3399; height: 70px; width: 100px"> Confused </button>
+				style="background-color:#CC3399; height: 70px; width: 100px;
+				border-radius:10px;"> Confused </button>
 				<button type = "button" id= 'Ang' onclick = "pushed('Angry')" 
-				style="background-color:#FF0000; height: 70px; width: 100px"> Angry </button>
+				style="background-color:#FF0000; height: 70px; width: 100px;
+				border-radius:10px;"> Angry </button>
 			</form>
 			<br><br>
 			<br><br>
