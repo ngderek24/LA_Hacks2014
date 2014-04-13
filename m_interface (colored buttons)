@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="background-color:'#000000'; border-collapse:collapse; border-spacing:0;" width=1920px height=1080px;>
+<audio id="audioAng" src="angry.mp3" loop 
+preload="auto"autobuffer></audio>
+
+<audio id="audioNeu" src="neutral.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioCmp" src="contemplative.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioCfs" src="confused.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioDep" src="depressed.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioCon" src="content.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioEla" src="elated.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioEne" src="energetic.mp3" loop 
+preload="auto"autobuffer></audio>
+<audio id="audioSer" src="serene.mp3" loop 
+preload="auto"autobuffer></audio>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+	</script>
+<head>
+	<link rel="stylesheet" type="text/css" href="crossfade.css">
+</head>
+<body style="width:screen.width; border-collapse:collapse; border-spacing:0; margin-bottom:0; margin-left:0; margin-right:0; margin-top:0;" background-color=transparent >
+	<div style="position:absolute"></div>
+	<div id='cycler' style="position:relative; margin: 0 auto; height:1080px; width:1920px; z-index:1;">                                                                                          
+		<img class='active' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" id='img' src="http://i.imgur.com/ZBBukdp.jpg" />
+		<img class='active' id='img2' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/O6WHB.jpg" />
+		<img class='active' id='img3' style="display:block; text-align:center; margin-left:auto; margin-right:auto;" src="http://i.imgur.com/dlYCTDy.jpg"/>
+	</div>
+
+	<script>
+		function EvalSound(soundobj) {
+			(audioSer).pause();
+			(audioSer).currentTime =0;
+			(audioCon).pause();
+			(audioCon).currentTime =0;
+			(audioEla).pause();
+			(audioEla).currentTime =0;
+			(audioCmp).pause();
+			(audioCmp).currentTime =0;
+			(audioNeu).pause();
+			(audioNeu).currentTime =0;
+			(audioEne).pause();
+			(audioEne).currentTime =0;
+			(audioDep).pause();
+			(audioDep).currentTime =0;
+			(audioCfs).pause();
+			(audioCfs).currentTime =0;
+			(audioAng).pause();
+			(audioAng).currentTime =0;
+			  var thissound=document.getElementById(soundobj);
+			thissound.volume = 0.0;
+			$(thissound).animate({volume: 1}, 1000);
+			  thissound.play();
+		}
+		function cycleImages(){
+			  var $active = $('#cycler .active');
+			  var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+			  $next.css('z-index',2);//move the next image up the pile
+			  $active.fadeOut(1500,function(){//fade out the top image
+			  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+				  $next.css('z-index',3).addClass('active');//make the next image the top one
+			  });
+			}
+
+		$(document).ready(function(){
+		// run every 25s
+		setInterval('cycleImages()', 25000);
+		})
+	</script>
+
+	<center>
+
+
+	<div style="position:absolute; width:1920px; top:0px; z-index:2;" background-color=transparent>
+		<p>NAME</p>
+		<div 
+			<p>How Are You Feeling Today?</p>
+			<form>
+				<button type = "button" id= 'Ser' onclick = "pushed('Serene')" style="background-color:#99FFCC"> Serene </button>
+				<button type = "button" id= 'Con' onclick = "pushed('Content')" style="background-color:#DFFF00"> Content </button>
+				<button type = "button" id= 'Ela' onclick = "pushed('Elated')" style="background-color:#FFFF00"> Elated </button>
+				<br>
+				<button type = "button" id= 'Cmp' onclick = "pushed('Contemplative')"style="background-color:#6666FF"> Contemplative </button>
+				<button type = "button" id= 'Neu' onclick = "pushed('Neutral')"style="background-color:#FF99FF"> Neutral </button>
+				<button type = "button" id= 'Ene' onclick = "pushed('Energetic')" style="background-color:#FF6600"> Energetic </button>
+				<br>
+				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')" style="background-color:#999988"> Depressed </button>
+				<button type = "button" id= 'Cfs' onclick = "pushed('Confused')" style="background-color:#CC3399"> Confused </button>
+				<button type = "button" id= 'Ang' onclick = "pushed('Angry')" style="background-color:#FF0000"> Angry </button>
+			</form>
+			<br><br>
+			<br><br>
+
+			<form>
+				<textarea onfocus="clearContents(this)" style="border:1px rgba(255,255,255,0.7); border-radius:10px; background-color:rgba(255,255,255,0.4); "  name="comments" id='diary' cols="70" rows="40">What do you want to write?
+				</textarea>
+				<br>
+				<button type="button" onclick="resetText()">Let go </button>
+				<br>
+			</form>
+		<script>
+			var bodyTextClickCtr=0;
+			function pushed(a)
+			{
+				if(a=='Serene')
+					{
+					document.getElementById('img').src="http://nooneexistsalone.files.wordpress.com/2011/10/sunrise2.jpg";
+					document.getElementById('img2').src="http://img.4plebs.org/boards/x/image/1391/86/1391864103957.jpg";
+					document.getElementById('img3').src='http://beststockpictures.toinspire.in/plog-content/images/widescreen-wallpapers/nature-pictures-2/nature-pictures-single-tree-bright-clouds-naute-pictures.jpg';
+					EvalSound('audioSer');
+					}
+				if(a=='Content')
+				{
+					document.getElementById('img').src="http://flowerdrawings.net/wp-content/uploads/2014/03/1095860966_a03c9cb69c.jpg";
+					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-326813.jpg";
+					document.getElementById('img3').src='http://wallpapers.wallbase.cc/rozne/wallpaper-68013.jpg';
+					EvalSound('audioCon');
+				}
+				if(a=='Elated')
+				{
+					document.getElementById('img').src="http://www.healthyhappylife.org/images/happy-people.jpg";
+					document.getElementById('img2').src="http://p1.pichost.me/i/30/1535145.jpg";
+					document.getElementById('img3').src='http://3.bp.blogspot.com/-F1IBOG0J9WA/SRSQEL6nPPI/AAAAAAAAAFs/PbIda7t0HFc/s1600/Smiley+Flower+Happy%2521.jpg';
+					EvalSound('audioEla');
+				}
+				if(a=='Contemplative')
+				{
+					document.getElementById('img').src="http://4loveofthetruth.files.wordpress.com/2012/01/contemplation21.jpg";
+					document.getElementById('img2').src="https://z-n.ak.fbcdn.net/external.ak/safe_image.php?d=AQBRb2wW-6Hxi00p&w=376&h=366&url=http%3A%2F%2Fhollyroach.com%2Fwp-content%2Fuploads%2F2013%2F09%2Fmeditating-by-the-lake.jpg";
+					document.getElementById('img3').src='http://upload.wikimedia.org/wikipedia/commons/e/e8/Water_drop_impact_on_a_water-surface.jpg';
+					EvalSound('audioCmp');
+				}
+				if(a=='Neutral')
+				{
+					document.getElementById('img').src="http://upload.wikimedia.org/wikipedia/commons/c/ca/Imperial_sand_dunes.jpg";
+					document.getElementById('img2').src="http://blog.gooddays-app.com/wp-content/uploads/2013/04/balance.jpg";
+					document.getElementById('img3').src='http://lowcadence.com/wp-content/uploads/2013/08/YinYang.jpg';
+					EvalSound('audioNeu');
+				}
+				if(a=='Energetic')
+				{
+					document.getElementById('img').src="http://fc00.deviantart.net/fs70/f/2010/056/1/f/Running_Fire_by_karimbalaa.jpg";
+					document.getElementById('img2').src="http://img3.wikia.nocookie.net/__cb20130506161118/powerlisting/images/f/f6/Blue_energy-blog.jpg";
+					document.getElementById('img3').src='http://lunar.thegamez.net/coalmine2014/images-how-coal-is-mined/net-3d-wallpaper-blue-energy-tornado-html-blue-energy-tornado-1920x1200.jpg';
+					EvalSound('audioEne');
+				}
+				if(a=='Depressed')
+				{
+					document.getElementById('img').src="http://dionwu.com/img/framesoflife/isolate.jpg";
+					document.getElementById('img2').src="http://i.imgur.com/ZBBukdp.jpg";
+					document.getElementById('img3').src='http://photographyunposed.files.wordpress.com/2012/09/foggy-morning-web.jpg';
+					EvalSound('audioDep');
+				}
+				if(a=='Confused')
+				{
+					document.getElementById('img').src="http://forbids.files.wordpress.com/2011/05/penrosestairs.png";
+					document.getElementById('img2').src="http://undr.com/portfolio/desktops/UndrDesktop_BlurryShipLights.jpg";
+					document.getElementById('img3').src='http://2.bp.blogspot.com/-k8K3WWi8Gvw/Tp3yyW9l1jI/AAAAAAAADBg/YWmnsG7wJn0/s1600/feet%2Bdancing.jpg';
+					EvalSound('audioCfs');
+				}
+				if(a=='Angry')
+				{
+					document.getElementById('img').src="http://wallpapers.wallbase.cc/rozne/wallpaper-767625.jpg";
+					document.getElementById('img2').src="http://wallpapers.wallbase.cc/rozne/wallpaper-2426010.jpg";
+					document.getElementById('img3').src='http://fc07.deviantart.net/fs71/i/2012/100/5/9/burning_woods_by_alexlinde-d4ug2ph.jpg';
+					EvalSound('audioAng');
+				}
+			}
+
+			function clearContents(txtArea)
+			{
+				if(bodyTextClickCtr==0)
+				{
+					txtArea.value='';
+					bodyTextClickCtr+=1;
+				}
+				else
+					return;
+			}
+			function resetText()
+			{
+				document.getElementById('diary').value='...';
+				bodyTextClickCtr=0;
+			}
+		</script>
+		</div>
+
+	</div>
+	</center>
+</body>
+</html>
