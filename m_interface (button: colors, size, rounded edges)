@@ -83,33 +83,133 @@ preload="auto"autobuffer></audio>
 			<p>How Are You Feeling Today?</p>
 			<form>
 				<button type = "button" id= 'Ser' onclick = "pushed('Serene')" 
-				style="background-color:#99FFCC; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.53, #CAEBEB),
+	color-stop(1, #78C9DB)
+);
+background-image: -o-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+background-image: -moz-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+background-image: -webkit-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+background-image: -ms-linear-gradient(bottom, #CAEBEB 53%, #78C9DB 100%);
+background-image: linear-gradient(to bottom, #CAEBEB 53%, #78C9DB 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Serene </button>
+				
 				<button type = "button" id= 'Con' onclick = "pushed('Content')" 
-				style="background-color:#DFFF00; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.53, #8DE0A1),
+	color-stop(1, #55F70A)
+);
+background-image: -o-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+background-image: -moz-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+background-image: -webkit-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+background-image: -ms-linear-gradient(bottom, #8DE0A1 53%, #55F70A 100%);
+background-image: linear-gradient(to bottom, #8DE0A1 53%, #55F70A 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Content </button>
 				<button type = "button" id= 'Ela' onclick = "pushed('Elated')" 
-				style="background-color:#FFFF00; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.18, #FCFFD6),
+	color-stop(1, #F5E505)
+);
+background-image: -o-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+background-image: -moz-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+background-image: -webkit-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+background-image: -ms-linear-gradient(bottom, #FCFFD6 18%, #F5E505 100%);
+background-image: linear-gradient(to bottom, #FCFFD6 18%, #F5E505 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Elated </button>
 				<br>
 				<button type = "button" id= 'Cmp' onclick = "pushed('Contemplative')"
-				style="background-color:#6666FF; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.5, #A8BBE3),
+	color-stop(1, #527A91)
+);
+background-image: -o-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+background-image: -moz-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+background-image: -webkit-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+background-image: -ms-linear-gradient(bottom, #A8BBE3 50%, #527A91 100%);
+background-image: linear-gradient(to bottom, #A8BBE3 50%, #527A91 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Contemplative </button>
 				<button type = "button" id= 'Neu' onclick = "pushed('Neutral')"
-				style="background-color:#FF99FF; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.16, #C1E69C),
+	color-stop(1, #F26DDC)
+);
+background-image: -o-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+background-image: -moz-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+background-image: -webkit-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+background-image: -ms-linear-gradient(bottom, #C1E69C 16%, #F26DDC 100%);
+background-image: linear-gradient(to bottom, #C1E69C 16%, #F26DDC 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Neutral </button>
 				<button type = "button" id= 'Ene' onclick = "pushed('Energetic')" 
-				style="background-color:#FF6600; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.32, #FFF200),
+	color-stop(0.66, #FA8805)
+);
+background-image: -o-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+background-image: -moz-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+background-image: -webkit-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+background-image: -ms-linear-gradient(bottom, #FFF200 32%, #FA8805 66%);
+background-image: linear-gradient(to bottom, #FFF200 32%, #FA8805 66%); height: 70px; width: 100px;
 				border-radius:10px;"> Energetic </button>
 				<br>
 				<button type = "button" id= 'Dep' onclick = "pushed('Depressed')" 
-				style="background-color:#999988; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.5, #596F80),
+	color-stop(1, #100D12)
+);
+background-image: -o-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+background-image: -moz-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+background-image: -webkit-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+background-image: -ms-linear-gradient(bottom, #596F80 50%, #100D12 100%);
+background-image: linear-gradient(to bottom, #596F80 50%, #100D12 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Depressed </button>
 				<button type = "button" id= 'Cfs' onclick = "pushed('Confused')" 
-				style="background-color:#CC3399; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.33, #E88BE5),
+	color-stop(1, #570566)
+);
+background-image: -o-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+background-image: -moz-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+background-image: -webkit-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+background-image: -ms-linear-gradient(bottom, #E88BE5 33%, #570566 100%);
+background-image: linear-gradient(to bottom, #E88BE5 33%, #570566 100%); height: 70px; width: 100px;
 				border-radius:10px;"> Confused </button>
 				<button type = "button" id= 'Ang' onclick = "pushed('Angry')" 
-				style="background-color:#FF0000; height: 70px; width: 100px;
+				style="background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.41, #FF9D00),
+	color-stop(0.66, #FA0505)
+);
+background-image: -o-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+background-image: -moz-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+background-image: -webkit-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+background-image: -ms-linear-gradient(bottom, #FF9D00 41%, #FA0505 66%);
+background-image: linear-gradient(to bottom, #FF9D00 41%, #FA0505 66%); height: 70px; width: 100px;
 				border-radius:10px;"> Angry </button>
 			</form>
 			<br><br>
